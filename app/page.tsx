@@ -1,9 +1,16 @@
+import Navbar from "@/components/Navbar";
+import AppSidebar from "@/components/Sidebar";
 import WeatherMain from "@/components/WeatherMain";
+import React from "react";
 
-export default function Home() {
+export default function Page() {
   return (
-    <div>
-      <WeatherMain city="kathmandu" />
+    <div className="flex h-screen">
+      <AppSidebar />
+      <div className="flex-1 flex flex-col">
+        <Navbar />
+        <WeatherMain city="kathmandu" />
+      </div>
     </div>
   );
 }
