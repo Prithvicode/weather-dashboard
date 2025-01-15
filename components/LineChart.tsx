@@ -33,8 +33,8 @@ export default function LineChart({ weatherData }: ChartProps) {
       {
         label: "Temperature (°C)",
         data: weatherData.temperatures,
-        borderColor: "rgba(75, 192, 192, 1)",
-        backgroundColor: "rgba(75, 192, 192, 0.2)",
+        borderColor: "rgba(24, 53, 98, 1)",
+        backgroundColor: "rgba(24, 53, 98, 0.8)",
         borderWidth: 2,
         tension: 0.4,
       },
@@ -54,8 +54,8 @@ export default function LineChart({ weatherData }: ChartProps) {
   };
 
   return (
-    <div className="">
-      <Line data={chartData} options={options} />
+    <div className="h-[200px] max-w-sm">
+      <Line data={chartData} options={options} className="size-full" />
     </div>
   );
 }

@@ -28,8 +28,8 @@ export default function BarChart({ weatherData }: ChartProps) {
       {
         label: "Temperature (°C)",
         data: weatherData.temperatures,
-        backgroundColor: "rgba(0, 0, 139, 0.5)",
-        borderColor: "rgba(0, 0, 128, 1)",
+        backgroundColor: "rgba(48, 98, 219, 0.5)",
+        borderColor: "rgba(48, 98, 219, 1)",
         borderWidth: 1,
       },
     ],
@@ -64,8 +64,8 @@ export default function BarChart({ weatherData }: ChartProps) {
   };
 
   return (
-    <div className="">
-      <Bar options={options} data={chartData} />
+    <div className="h-[200px] max-w-sm">
+      <Bar options={options} data={chartData} className="size-full" />
     </div>
   );
 }
