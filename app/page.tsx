@@ -1,5 +1,4 @@
-
-'use client'
+"use client";
 import Navbar from "@/components/Navbar";
 import AppSidebar from "@/components/Sidebar";
 import WeatherMain from "@/components/WeatherMain";
@@ -13,11 +12,11 @@ export default function Page() {
   };
 
   return (
-    <div className="flex h-screen">
+    <div className="flex h-screen pl-6">
       <AppSidebar />
       <div className="flex-1 flex flex-col">
         <Navbar onSearch={handleSearch} />
-        <WeatherMain city={city} /> 
+        <WeatherMain city={city} />
       </div>
     </div>
   );

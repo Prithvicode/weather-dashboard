@@ -13,7 +13,7 @@ export default function DetailCard({
 }: DetailCardProps) {
   return (
     <>
-      <div className="flex  bg-gray-200 p-6 w-1/2 gap-4">
+      <div className="flex bg-gray-200 p-6 gap-4 max-md:p-3 ">
         {/* Icon */}
         <img src={imgUrl} alt="wind" width={28} />
 

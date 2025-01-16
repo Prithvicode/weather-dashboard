@@ -1,5 +1,3 @@
-
-
 "use client";
 
 import React, { useState, useEffect } from "react";
@@ -72,10 +70,15 @@ const Navbar: React.FC<NavbarProps> = ({ onSearch }) => {
           onChange={(e) => setSearchValue(e.target.value)} // Update the search value
           className="pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
-        <Button onClick={handleSearch}>Search</Button>
+        <Button
+          onClick={handleSearch}
+          className="border border-blue-800 text-blue-800 hover:bg-blue-900 hover:text-white"
+        >
+          Search
+        </Button>
       </div>
       <div>
-      <ModeToggle/>
+        <ModeToggle />
       </div>
     </div>
   );

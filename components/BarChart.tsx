@@ -64,7 +64,7 @@ export default function BarChart({ weatherData }: ChartProps) {
   };
 
   return (
-    <div className="h-[200px] max-w-sm">
+    <div className="h-[200px] max-w-md">
       <Bar options={options} data={chartData} className="size-full" />
     </div>
   );

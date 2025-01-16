@@ -27,7 +27,7 @@ export default function WeatherMain({ city }: WeatherMainProps) {
 
   return (
     <>
-      <section className="flex gap-8 flex-col p-5">
+      <section className="flex gap-8 flex-col p-10">
         <div>
           <h1 className="font-bold text-lg text-blue-950">Today Overview</h1>
           <TodayCard currentWeatherData={currentWeatherData} />
@@ -36,9 +36,9 @@ export default function WeatherMain({ city }: WeatherMainProps) {
           <h1 className="font-bold text-lg text-blue-950">
             Average Weekly Temperature
           </h1>
-          <div className="flex gap-8">
+          <div className="md:flex md:gap-10 md:justify-between">
             <BarChart weatherData={weatherData} />
-            <LineChart weatherData={weatherData} />;
+            <LineChart weatherData={weatherData} />
           </div>
         </div>
       </section>
