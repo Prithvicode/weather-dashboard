@@ -6,20 +6,24 @@ import React, { useState, useEffect } from "react";
 import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
 import { Button } from "./ui/button";
-
-
-
+import ModeToggle from "./ToggleMode";
 
 interface DateTime {
   monthYear: string;
   dayTime: string;
 }
 
-const Navbar: React.FC = () => {
+interface NavbarProps {
+  onSearch: (value: string) => void; // Handler to pass the search value up
+}
+
+const Navbar: React.FC<NavbarProps> = ({ onSearch }) => {
   const [dateTime, setDateTime] = useState<DateTime>({
     monthYear: "",
     dayTime: "",
   });
+
+  const [searchValue, setSearchValue] = useState("");
 
   useEffect(() => {
     const updateDateTime = () => {
@@ -46,6 +50,10 @@ const Navbar: React.FC = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const handleSearch = () => {
+    onSearch(searchValue); // Pass the search value to the parent
+  };
+
   return (
     <div className="flex justify-between items-center w-full px-6 py-4 gap-10">
       <div className="flex flex-col">
@@ -60,9 +68,14 @@ const Navbar: React.FC = () => {
         <Input
           placeholder="Search location here"
           name="search"
+          value={searchValue}
+          onChange={(e) => setSearchValue(e.target.value)} // Update the search value
           className="pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
-        <Button>Search</Button>
+        <Button onClick={handleSearch}>Search</Button>
+      </div>
+      <div>
+      <ModeToggle/>
       </div>
     </div>
   );

@@ -65,6 +65,6 @@ export default function useWeatherData(city: string) {
 
     fetchData();
   }, [city]);
-
+  
   return { weatherData, currentWeatherData, loading, error };
 }
