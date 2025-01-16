@@ -9,10 +9,10 @@ export default function TodayCard({ currentWeatherData }: TodayCardProps) {
   const iconUrl = `http://openweathermap.org/img/wn/${currentWeatherData?.weather[0].icon}@2x.png`;
   return (
     <>
-      <div className="max-w-md">
+      <div className=" ">
         {/* Weather Card */}
-        <div className="">
-          <div className="p-6 bg-gradient-to-b from-blue-900 to-blue-950 flex justify-between items-end text-white ">
+        <div className="md:flex gap-2 max-md:max-w-sm">
+          <div className="flex-1 p-6 bg-gradient-to-b from-blue-900 to-blue-950 flex justify-between items-end text-white ">
             <div>
               <img src={iconUrl} alt="Weather Icon" width={60} />
               <h1 className="text-4xl">{currentWeatherData?.main.temp} °C</h1>
@@ -24,7 +24,7 @@ export default function TodayCard({ currentWeatherData }: TodayCardProps) {
           </div>
 
           {/* Details */}
-          <div className="flex">
+          <div className="grid grid-cols-2 gap-2 max-md:mt-3">
             <DetailCard
               title="Winds Speed"
               value={currentWeatherData?.wind.speed}
@@ -36,6 +36,18 @@ export default function TodayCard({ currentWeatherData }: TodayCardProps) {
               value={currentWeatherData?.main.pressure}
               unit={"hpa"}
               imgUrl="/pressure.svg"
+            />
+            <DetailCard
+              title="Humidity"
+              value={currentWeatherData?.main.humidity}
+              unit={"%"}
+              imgUrl="/humidity.svg"
+            />
+            <DetailCard
+              title="Sea Level"
+              value={currentWeatherData?.main.sea_level}
+              unit={"Msl"}
+              imgUrl="/sea-level.svg"
             />
           </div>
         </div>

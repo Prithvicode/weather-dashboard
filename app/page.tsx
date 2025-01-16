@@ -5,11 +5,11 @@ import React from "react";
 
 export default function Page() {
   return (
-    <div className="flex h-screen">
+    <div className="flex h-screen ">
       <AppSidebar />
       <div className="flex-1 flex flex-col">
         <Navbar />
-        <WeatherMain city="kathmandu" />
+        <WeatherMain city="London" />
       </div>
     </div>
   );
